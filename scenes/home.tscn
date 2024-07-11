@@ -1,0 +1,328 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://scripts/locations/home.gd" type="Script" id=1]
+[ext_resource path="res://scenes/wall scenes/wall-wood.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/wall scenes/Horizontal-wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/wall scenes/Vertical-wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/wall scenes/Угол 2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/door scenes/wood-door-right.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/door scenes/tp-wood-door-right.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Player 1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/wall scenes/Угол 3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/door scenes/wood-door-up.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sprites/floor/wood_floor_v2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/UI/f.png" type="Texture" id=13]
+[ext_resource path="res://scenes/object scenes/Bad.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/object scenes/chair_right.tscn" type="PackedScene" id=15]
+[ext_resource path="res://sprites/object/carpet.png" type="Texture" id=16]
+[ext_resource path="res://scenes/object scenes/table_horizontal.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/object scenes/double_table.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/object scenes/taburet.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/object scenes/closet_right.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/object scenes/furnace.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/object scenes/chest_right.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/object scenes/closet_down.tscn" type="PackedScene" id=23]
+[ext_resource path="res://sprites/other/light_3123123.png" type="Texture" id=26]
+
+[sub_resource type="TileSet" id=2]
+0/name = "wood_floor_v2.png 0"
+0/texture = ExtResource( 12 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 51, 36.5 )
+
+[node name="home" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player1" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 223, 35 )
+
+[node name="objects" type="YSort" parent="YSort"]
+
+[node name="Bad" parent="YSort/objects" instance=ExtResource( 14 )]
+position = Vector2( -40.6899, -30 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Furnace" parent="YSort/objects" instance=ExtResource( 21 )]
+position = Vector2( 358, -161 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Taburet" parent="YSort/objects" instance=ExtResource( 19 )]
+position = Vector2( 22, -23 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Table_horizontal" parent="YSort/objects" instance=ExtResource( 17 )]
+position = Vector2( 22, -31 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Chair_right" parent="YSort/objects" instance=ExtResource( 15 )]
+position = Vector2( 262, -46 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Chair_right2" parent="YSort/objects" instance=ExtResource( 15 )]
+position = Vector2( 262, -20 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Chair_right3" parent="YSort/objects" instance=ExtResource( 15 )]
+position = Vector2( 350, -46 )
+rotation = 3.14159
+scale = Vector2( 0.992436, -1 )
+
+[node name="Chair_right4" parent="YSort/objects" instance=ExtResource( 15 )]
+position = Vector2( 350, -20 )
+rotation = 3.14159
+scale = Vector2( 0.992436, -1 )
+
+[node name="Bad2" parent="YSort/objects" instance=ExtResource( 14 )]
+position = Vector2( 293.761, -351 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Closet_down" parent="YSort/objects" instance=ExtResource( 23 )]
+position = Vector2( 247, -357 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Closet_right" parent="YSort/objects" instance=ExtResource( 20 )]
+position = Vector2( -50, 55 )
+scale = Vector2( 0.992436, 1 )
+
+[node name="Chest_right" parent="YSort/objects" instance=ExtResource( 22 )]
+position = Vector2( 53.5915, 33 )
+rotation = 3.14159
+scale = Vector2( 0.992436, -1 )
+
+[node name="Carpet" type="Sprite" parent="YSort/objects"]
+position = Vector2( 224, 52.9616 )
+rotation = 1.57079
+scale = Vector2( 1, 0.992436 )
+texture = ExtResource( 16 )
+
+[node name="door 1" parent="YSort/objects" instance=ExtResource( 11 )]
+position = Vector2( 224, -192 )
+
+[node name="door 2" parent="YSort/objects" instance=ExtResource( 6 )]
+position = Vector2( 120, 0 )
+
+[node name="StaticBody2D" parent="YSort/objects" instance=ExtResource( 18 )]
+position = Vector2( 306, 4 )
+
+[node name="wall" type="YSort" parent="YSort"]
+
+[node name="StaticBody2D" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( -32, -64 )
+
+[node name="StaticBody2D2" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 32, -64 )
+
+[node name="StaticBody2D3" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 88, -64 )
+scale = Vector2( 0.8, 1 )
+
+[node name="StaticBody2D6" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( -72, -96 )
+
+[node name="StaticBody2D7" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( -72, -32 )
+
+[node name="StaticBody2D8" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( -72, 32 )
+
+[node name="StaticBody2D4" parent="YSort/wall" instance=ExtResource( 3 )]
+position = Vector2( -32, 80 )
+
+[node name="StaticBody2D9" parent="YSort/wall" instance=ExtResource( 3 )]
+position = Vector2( 32, 80 )
+
+[node name="StaticBody2D11" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 72, 40 )
+scale = Vector2( 1, 0.8 )
+
+[node name="StaticBody2D12" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, -96 )
+
+[node name="StaticBody2D15" parent="YSort/wall" instance=ExtResource( 3 )]
+position = Vector2( 96, 16 )
+scale = Vector2( 0.5, 1 )
+
+[node name="StaticBody2D17" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( -72, -136 )
+
+[node name="StaticBody2D13" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( -72, 72 )
+rotation = -1.57079
+
+[node name="StaticBody2D18" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 72, 8 )
+
+[node name="StaticBody2D21" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 72, 72 )
+rotation = -3.14159
+
+[node name="StaticBody2D10" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 392, 72 )
+rotation = -3.14159
+
+[node name="StaticBody2D14" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, 40 )
+scale = Vector2( 1, 0.8 )
+
+[node name="StaticBody2D5" parent="YSort/wall" instance=ExtResource( 3 )]
+position = Vector2( 160, 80 )
+
+[node name="StaticBody2D16" parent="YSort/wall" instance=ExtResource( 3 )]
+position = Vector2( 288, 80 )
+
+[node name="StaticBody2D19" parent="YSort/wall" instance=ExtResource( 3 )]
+position = Vector2( 352, 80 )
+
+[node name="StaticBody2D20" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 120, 72 )
+rotation = -1.57079
+
+[node name="StaticBody2D22" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 392, 32 )
+
+[node name="StaticBody2D23" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 392, -32 )
+
+[node name="StaticBody2D24" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 392, -96 )
+
+[node name="StaticBody2D25" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 392, -160 )
+
+[node name="StaticBody2D26" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, -168 )
+scale = Vector2( 1, 0.8 )
+
+[node name="StaticBody2D27" parent="YSort/wall" instance=ExtResource( 10 )]
+position = Vector2( 120, -136 )
+rotation = -3.14159
+
+[node name="StaticBody2D28" parent="YSort/wall" instance=ExtResource( 10 )]
+position = Vector2( 120, 8 )
+rotation = -3.14159
+
+[node name="StaticBody2D29" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 160, -192 )
+
+[node name="StaticBody2D30" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 288, -192 )
+
+[node name="StaticBody2D31" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 352, -192 )
+
+[node name="StaticBody2D32" parent="YSort/wall" instance=ExtResource( 10 )]
+position = Vector2( 328, -264 )
+rotation = -1.57079
+
+[node name="StaticBody2D33" parent="YSort/wall" instance=ExtResource( 10 )]
+position = Vector2( 120, -264 )
+
+[node name="StaticBody2D34" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, -224 )
+
+[node name="StaticBody2D35" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 392, -224 )
+
+[node name="StaticBody2D36" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 392, -264 )
+rotation = 1.57079
+
+[node name="StaticBody2D37" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, -352 )
+
+[node name="StaticBody2D38" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 120, -456 )
+
+[node name="StaticBody2D39" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 328, -352 )
+
+[node name="StaticBody2D40" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 328, -296 )
+scale = Vector2( 1, 0.8 )
+
+[node name="StaticBody2D41" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, -416 )
+
+[node name="StaticBody2D42" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 328, -416 )
+
+[node name="StaticBody2D43" parent="YSort/wall" instance=ExtResource( 5 )]
+position = Vector2( 328, -456 )
+rotation = 1.57079
+
+[node name="StaticBody2D44" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 160, -384 )
+
+[node name="StaticBody2D45" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 224, -384 )
+
+[node name="StaticBody2D46" parent="YSort/wall" instance=ExtResource( 2 )]
+position = Vector2( 288, -384 )
+
+[node name="StaticBody2D47" parent="YSort/wall" instance=ExtResource( 4 )]
+position = Vector2( 120, -296 )
+scale = Vector2( 1, 0.8 )
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -4
+tile_set = SubResource( 2 )
+format = 1
+tile_data = PoolIntArray( -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -262141, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, 65535, 0, 0, 0, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0 )
+
+[node name="tp_door" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 72 )
+rotation = 1.57079
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.45098, 0.45098, 0.45098, 1 )
+
+[node name="Light 1" type="Light2D" parent="."]
+light_mask = 2
+position = Vector2( -10.9999, -13.607 )
+rotation = -3.14159
+scale = Vector2( 1.41061, 2.93579 )
+texture = ExtResource( 26 )
+energy = 0.8
+shadow_enabled = true
+
+[node name="Light 2" type="Light2D" parent="."]
+position = Vector2( 223, -333 )
+rotation = 1.57079
+scale = Vector2( 1.35524, 3.5248 )
+texture = ExtResource( 26 )
+energy = 0.8
+shadow_enabled = true
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 97, -31 )
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+visible = false
+position = Vector2( -19, -7.5 )
+shape = SubResource( 7 )
+
+[node name="F" type="Sprite" parent="Area2D2"]
+visible = false
+position = Vector2( 4, -18 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]

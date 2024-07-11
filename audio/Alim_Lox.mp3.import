@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alim_Lox.mp3-2601a1853ada9d7807925c61481cc4ee.mp3str"
+
+[deps]
+
+source_file="res://audio/Alim_Lox.mp3"
+dest_files=[ "res://.import/Alim_Lox.mp3-2601a1853ada9d7807925c61481cc4ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

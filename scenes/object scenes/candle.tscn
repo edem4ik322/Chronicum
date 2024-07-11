@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/other/spot.png" type="Texture" id=1]
+[ext_resource path="res://sprites/object/candle_v1.png" type="Texture" id=2]
+[ext_resource path="res://scripts/object sctipts/candle.gd" type="Script" id=3]
+[ext_resource path="res://sprites/object/candle_v2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/object/candle_v3.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Candle" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+light_mask = 14
+position = Vector2( 0, -16 )
+scale = Vector2( 0.813662, 0.756894 )
+texture = ExtResource( 1 )
+color = Color( 1, 0.329412, 0, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -11 )
+frames = SubResource( 1 )
+frame = 1
+playing = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/object/closet_1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19, 14 )
+
+[node name="Closet_down" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 4
+
+[node name="sprite_Closet_down" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -14 )
+shape = SubResource( 1 )
+
+[node name="Closet1" type="Sprite" parent="."]
+position = Vector2( 0, -14 )
+texture = ExtResource( 1 )

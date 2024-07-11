@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sprites/wall/house/door-open-wood-1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/wall/house/right-wood-door.png" type="Texture" id=2]
+[ext_resource path="res://scripts/object sctipts/door_close.gd" type="Script" id=3]
+[ext_resource path="res://sprites/other/_SU_CXPo--M.jpg" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16.5, 4.25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 40 )
+
+[node name="door" type="StaticBody2D"]
+light_mask = 8
+z_index = -1
+collision_layer = 8
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -8 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -56 )
+shape = SubResource( 2 )
+
+[node name="close" type="StaticBody2D" parent="."]
+light_mask = 8
+collision_layer = 8
+collision_mask = 4
+
+[node name="sprite_close" type="Sprite" parent="close"]
+light_mask = 8
+position = Vector2( 8, -32 )
+texture = ExtResource( 2 )
+
+[node name="Collision_close" type="CollisionShape2D" parent="close"]
+visible = false
+light_mask = 8
+position = Vector2( 0, -32 )
+shape = SubResource( 3 )
+
+[node name="open" type="StaticBody2D" parent="."]
+light_mask = 8
+collision_layer = 8
+collision_mask = 4
+
+[node name="sprite_open" type="Sprite" parent="open"]
+light_mask = 8
+position = Vector2( 8, -32 )
+rotation = -1.57079
+texture = ExtResource( 1 )
+
+[node name="Collision_open" type="CollisionShape2D" parent="open"]
+visible = false
+light_mask = 8
+position = Vector2( 9.5, -43.25 )
+shape = SubResource( 4 )
+
+[node name="Door_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 8
+collision_mask = 4
+
+[node name="Collision_area_close" type="CollisionShape2D" parent="Door_area"]
+position = Vector2( 0, -32 )
+shape = SubResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+light_mask = 8
+position = Vector2( -2.84217e-14, -32 )
+scale = Vector2( 0.0625, 0.221239 )
+texture = ExtResource( 4 )
+texture_scale = 1.13
+range_item_cull_mask = 8
+
+[connection signal="body_entered" from="Door_area" to="." method="_on_Door_area_body_entered"]
+[connection signal="body_exited" from="Door_area" to="." method="_on_Door_area_body_exited"]
