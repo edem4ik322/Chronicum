@@ -1,5 +1,6 @@
 extends Node
 
+var pause = false
 var config
 var path_to_save_file = "user://game.cfg"
 var location_now = "home"
@@ -21,6 +22,8 @@ var f :int
 var tp :int = 0
 var help_1 :bool = false
 var help_2 :bool = false
+var weather = "clear"
+
 
 func ready():
 	OS.center_window()
@@ -62,6 +65,7 @@ func save_game():
 
 
 func load_game():
+	pause = false
 	config = ConfigFile.new()
 	config.load(path_to_save_file)
 	

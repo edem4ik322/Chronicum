@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://style/theme/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/UI/Pause.gd" type="Script" id=2]
+
+[node name="Pause" type="Control"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 340.0
+margin_top = 70.0
+margin_right = 704.0
+margin_bottom = 451.0
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 85.0
+margin_top = 77.5
+margin_right = 268.0
+margin_bottom = 104.5
+theme = ExtResource( 1 )
+text = "Продолжить"
+
+[node name="Save_Button" type="Button" parent="Panel"]
+margin_left = 85.0
+margin_top = 136.0
+margin_right = 268.0
+margin_bottom = 163.0
+theme = ExtResource( 1 )
+text = "Сохранить (f5)"
+
+[node name="Load_Button" type="Button" parent="Panel"]
+margin_left = 85.0
+margin_top = 194.0
+margin_right = 268.0
+margin_bottom = 221.0
+theme = ExtResource( 1 )
+text = "Загрузить (f9)"
+
+[node name="Exit_Button" type="Button" parent="."]
+margin_left = 804.0
+margin_top = 552.0
+margin_right = 987.0
+margin_bottom = 579.0
+theme = ExtResource( 1 )
+text = "Выход"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Save_Button" to="." method="_on_Save_Button_pressed"]
+[connection signal="pressed" from="Panel/Load_Button" to="." method="_on_Load_Button_pressed"]
+[connection signal="pressed" from="Exit_Button" to="." method="_on_Exit_Button_pressed"]

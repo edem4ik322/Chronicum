@@ -36,39 +36,40 @@ func _ready():
 	#Singleton.load_game()
 
 func _physics_process(_delta):
-	if $CanvasLayer/TextureProgress2.value!=100:
-		$CanvasLayer/TextureProgress2.value = $CanvasLayer/TextureProgress2.value+0.05
-	if Input.is_action_pressed("shift") and not Input.is_action_pressed("magic_button"):
-		$CanvasLayer/TextureProgress.modulate.a = move_toward(modulate.a, 1.0, _delta)
-		$CanvasLayer/TextureProgress.value = $CanvasLayer/TextureProgress.value-0.5
-		if $CanvasLayer/TextureProgress.value>0:
-			speed = 150
+	if Singleton.pause == false:
+		if $CanvasLayer/TextureProgress2.value!=100:
+			$CanvasLayer/TextureProgress2.value = $CanvasLayer/TextureProgress2.value+0.05
+		if Input.is_action_pressed("shift") and not Input.is_action_pressed("magic_button"):
+			$CanvasLayer/TextureProgress.modulate.a = move_toward(modulate.a, 1.0, _delta)
+			$CanvasLayer/TextureProgress.value = $CanvasLayer/TextureProgress.value-0.5
+			if $CanvasLayer/TextureProgress.value>0:
+				speed = 150
+			else:
+				speed = 100
+		elif Input.is_action_pressed("alt"):
+			speed = 50
+			$CanvasLayer/TextureProgress.value = $CanvasLayer/TextureProgress.value+0.4
 		else:
 			speed = 100
-	elif Input.is_action_pressed("alt"):
-		speed = 50
-		$CanvasLayer/TextureProgress.value = $CanvasLayer/TextureProgress.value+0.4
-	else:
-		speed = 100
-		$CanvasLayer/TextureProgress.value = $CanvasLayer/TextureProgress.value+0.2
-	
-	var velocity = Vector2()
-	if Input.is_action_pressed("TELEPORT"):
-		$"../Player1".position = Singleton.mouse_pos
-	if not Input.is_action_pressed("magic_button"):
-		if Input.is_action_pressed("right"):
-			velocity.x += 1
-		if Input.is_action_pressed("left"):
-			velocity.x -= 1
-		if Input.is_action_pressed("down"):
-			velocity.y += 1
-		if Input.is_action_pressed("up"):
-			velocity.y -= 1
-		velocity = velocity.normalized() * speed
-		move_and_slide(velocity, Vector2.UP)
-	Singleton.hand_pos = $"../Player1/".position
-	Singleton.player_pos_x = $"../Player1".position.x
-	Singleton.player_pos_y = $"../Player1".position.y
+			$CanvasLayer/TextureProgress.value = $CanvasLayer/TextureProgress.value+0.2
+		
+		var velocity = Vector2()
+		if Input.is_action_pressed("TELEPORT"):
+			$"../Player1".position = Singleton.mouse_pos
+		if not Input.is_action_pressed("magic_button"):
+			if Input.is_action_pressed("right"):
+				velocity.x += 1
+			if Input.is_action_pressed("left"):
+				velocity.x -= 1
+			if Input.is_action_pressed("down"):
+				velocity.y += 1
+			if Input.is_action_pressed("up"):
+				velocity.y -= 1
+			velocity = velocity.normalized() * speed
+			move_and_slide(velocity, Vector2.UP)
+		Singleton.hand_pos = $"../Player1/".position
+		Singleton.player_pos_x = $"../Player1".position.x
+		Singleton.player_pos_y = $"../Player1".position.y
 
 
 		#if is_network_master(): #проверяем, что мы управляем одним основным игроком
@@ -77,22 +78,23 @@ func _physics_process(_delta):
 		#move_and_slide(velocity, Vector2.UP)
 
 func _process(_delta):
-	if Input.is_action_pressed("magic_button"):
-		if not fire_called:
-			$AnimatedSprite.play("stay")
-		elif fire_called:
-			$AnimatedSprite.play("Fire")
-	else:
-		if Input.is_action_pressed("left"):
-			$AnimatedSprite.play("left")
-		elif Input.is_action_pressed("right"):
-			$AnimatedSprite.play("right")
-		elif Input.is_action_pressed("down"):
-			$AnimatedSprite.play("down")
-		elif Input.is_action_pressed("up"):
-			$AnimatedSprite.play("up")
+	if Singleton.pause == false:
+		if Input.is_action_pressed("magic_button"):
+			if not fire_called:
+				$AnimatedSprite.play("stay")
+			elif fire_called:
+				$AnimatedSprite.play("Fire")
 		else:
-			$AnimatedSprite.play("stay")
+			if Input.is_action_pressed("left"):
+				$AnimatedSprite.play("left")
+			elif Input.is_action_pressed("right"):
+				$AnimatedSprite.play("right")
+			elif Input.is_action_pressed("down"):
+				$AnimatedSprite.play("down")
+			elif Input.is_action_pressed("up"):
+				$AnimatedSprite.play("up")
+			else:
+				$AnimatedSprite.play("stay")
 
 
 func _input(event):
@@ -100,7 +102,12 @@ func _input(event):
 		Singleton.mouse_pos = get_global_mouse_position()
 	if event is InputEventKey:
 		if event.is_action_pressed("esc"):
-			Singleton.change_scene("res://scenes/menu.tscn")
+			if Singleton.pause == false:
+				$CanvasLayer/Pause.show()
+				Singleton.pause = true
+			elif Singleton.pause == true:
+				$CanvasLayer/Pause.hide()
+				Singleton.pause = false
 		if event.is_action_pressed("f5"):
 			Singleton.f = 5
 			Singleton.save_game()
@@ -113,19 +120,19 @@ func _input(event):
 			Singleton.load_game()
 			Singleton.f = 0
 		
-				
-		if Singleton.do_magic == true:
-			if Input.is_action_pressed("magic_button"):
-				if event.is_pressed():
-					if input_magic.size() >= max_input_magic:
-						input_magic.remove(0)
-					if event.scancode != KEY_SPACE:
-						input_magic.append(event.scancode)
-						check_skill_activation()
-						#print(input_magic)
-			else:
-				input_magic.clear()
-				check_skill_activation()
+		if Singleton.pause == false:
+			if Singleton.do_magic == true:
+				if Input.is_action_pressed("magic_button"):
+					if event.is_pressed():
+						if input_magic.size() >= max_input_magic:
+							input_magic.remove(0)
+						if event.scancode != KEY_SPACE:
+							input_magic.append(event.scancode)
+							check_skill_activation()
+							#print(input_magic)
+				else:
+					input_magic.clear()
+					check_skill_activation()
 
 
 func check_skill_activation():
