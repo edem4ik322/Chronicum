@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://sprites/floor/road_1.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/Player 1.tscn" type="PackedScene" id=2]
@@ -20,7 +20,25 @@
 [ext_resource path="res://scenes/object scenes/WoodenPilar.tscn" type="PackedScene" id=18]
 [ext_resource path="res://sprites/houses/Doctor's house.png" type="Texture" id=19]
 [ext_resource path="res://sprites/houses/Карта деревни.png" type="Texture" id=20]
+[ext_resource path="res://sprites/nature/rain/rain1.png" type="Texture" id=21]
+[ext_resource path="res://sprites/nature/rain/rain2.png" type="Texture" id=22]
+[ext_resource path="res://sprites/nature/rain/rain5.png" type="Texture" id=23]
 [ext_resource path="res://scenes/object scenes/furnace.tscn" type="PackedScene" id=24]
+[ext_resource path="res://sprites/nature/rain/rain4.png" type="Texture" id=25]
+[ext_resource path="res://sprites/nature/rain/rain3.png" type="Texture" id=26]
+
+[sub_resource type="AnimatedTexture" id=2]
+flags = 4
+frames = 5
+frame_0/texture = ExtResource( 21 )
+frame_1/texture = ExtResource( 22 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 26 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 25 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 23 )
+frame_4/delay_sec = 0.0
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass_3.png 0"
@@ -152,6 +170,15 @@
 
 [node name="map" type="Node2D"]
 script = ExtResource( 11 )
+
+[node name="raindrop" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2( 619, 385 )
+amount = 250
+texture = SubResource( 2 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 1000 )
+gravity = Vector2( 0, 0 )
 
 [node name="floor" type="TileMap" parent="."]
 position = Vector2( 30, 0 )

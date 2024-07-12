@@ -90,7 +90,8 @@ smoothing_speed = 7.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
-position = Vector2( 193, -17 )
+visible = false
+position = Vector2( -17, -61 )
 rotation = -0.420663
 amount = 600
 lifetime = 1.5

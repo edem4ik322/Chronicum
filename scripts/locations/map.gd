@@ -23,5 +23,7 @@ func _ready():
 func _physics_process(delta):
 	if Singleton.weather == "rain":
 		$CanvasModulate.show()
+		$raindrop.show()
 	else:
 		$CanvasModulate.hide()
+		$raindrop.hide()
