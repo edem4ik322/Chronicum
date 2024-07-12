@@ -20,3 +20,8 @@ func _ready():
 			print("Начальная позиция")
 
 
+func _physics_process(delta):
+	if Singleton.weather == "rain":
+		$CanvasModulate.show()
+	else:
+		$CanvasModulate.hide()

@@ -24,13 +24,16 @@ var magic_pos: Vector2
 func _ready():
 	if Singleton.weather == "rain":
 		if Singleton.location_now == "map":
+			$CanvasLayer/CPUParticles2D.show()
 			$AudioStreamPlayer.volume_db = -10
 			$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Outside Rain 1.mp3")
 		else:
+			$CanvasLayer/CPUParticles2D.hide()
 			$AudioStreamPlayer.volume_db = 0
 			$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Inside Rain 1.mp3")
 		$AudioStreamPlayer.play()
 	elif Singleton.weather == "clear":
+		$CanvasLayer/CPUParticles2D.hide()
 		$AudioStreamPlayer.stop()
 	if Singleton.location_now == "map":
 		$shadow.show()
@@ -139,16 +142,18 @@ func _input(event):
 			if Input.is_action_pressed("f6"):
 				if Singleton.weather == "clear":
 					if Singleton.location_now == "map":
+						$CanvasLayer/CPUParticles2D.show()
 						$AudioStreamPlayer.volume_db = -10
 						$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Outside Rain 1.mp3")
 					else:
+						$CanvasLayer/CPUParticles2D.hide()
 						$AudioStreamPlayer.volume_db = 0
 						$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Inside Rain 1.mp3")
 					$AudioStreamPlayer.play()
 					Singleton.weather = "rain"
 					print("Начался дождь")
 				elif Singleton.weather == "rain":
-					
+					$CanvasLayer/CPUParticles2D.hide()
 					$AudioStreamPlayer.stop()
 					Singleton.weather = "clear"
 					print("Дождь закончился")

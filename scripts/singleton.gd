@@ -59,6 +59,7 @@ func save_game():
 	config.set_value("Player", "player_position_x", player_pos_x)
 	config.set_value("Player", "player_position_y", player_pos_y)
 	config.set_value("Player", "location_now", location_now)
+	config.set_value("Player", "weaher", weather)
 	config.save(path_to_save_file)
 	print("Игра сохранена")
 
@@ -72,7 +73,7 @@ func load_game():
 	location_now = config.get_value("Player", "location_now", location_now)
 	save_player_pos_x = config.get_value("Player", "player_position_x", player_pos_x)
 	save_player_pos_y = config.get_value("Player", "player_position_y", player_pos_y)
-	
+	weather = config.get_value("Player", "weaher", weather)
 	loc="res://scenes/"+location_now+".tscn"
 	#var game = load(loc).instance()
 	has_saves = true

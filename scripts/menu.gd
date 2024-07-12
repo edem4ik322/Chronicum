@@ -1,7 +1,6 @@
 extends Node2D
 
-func _ready():
-	print("Проверка гита и того, что я не рукожоп")
+#func _ready():
 	#get_tree().connect("network_peer_connected", self, "_connected")
 
 
