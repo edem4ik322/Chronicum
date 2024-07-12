@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WE Light Inside Rain 1.mp3-dc108f40b7c267648e82bb7b6bb354f4.mp3str"
+
+[deps]
+
+source_file="res://audio/rain/WE Light Inside Rain 1.mp3"
+dest_files=[ "res://.import/WE Light Inside Rain 1.mp3-dc108f40b7c267648e82bb7b6bb354f4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

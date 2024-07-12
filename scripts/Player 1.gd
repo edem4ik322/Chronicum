@@ -22,6 +22,16 @@ var magic_pos: Vector2
 
 
 func _ready():
+	if Singleton.weather == "rain":
+		if Singleton.location_now == "map":
+			$AudioStreamPlayer.volume_db = -10
+			$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Outside Rain 1.mp3")
+		else:
+			$AudioStreamPlayer.volume_db = 0
+			$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Inside Rain 1.mp3")
+		$AudioStreamPlayer.play()
+	elif Singleton.weather == "clear":
+		$AudioStreamPlayer.stop()
 	if Singleton.location_now == "map":
 		$shadow.show()
 	else:
@@ -31,12 +41,16 @@ func _ready():
 		$CanvasLayer/Label.text = "Игра загружена"
 		$CanvasLayer/Label.show()
 		$Timer.start()
+		
 	#$"../Player1".position.x = Singleton.player_pos_x
 	#$"../Player1".position.y = Singleton.player_pos_y
 	#Singleton.load_game()
 
 func _physics_process(_delta):
 	if Singleton.pause == false:
+		
+		
+		
 		if $CanvasLayer/TextureProgress2.value!=100:
 			$CanvasLayer/TextureProgress2.value = $CanvasLayer/TextureProgress2.value+0.05
 		if Input.is_action_pressed("shift") and not Input.is_action_pressed("magic_button"):
@@ -121,6 +135,23 @@ func _input(event):
 			Singleton.f = 0
 		
 		if Singleton.pause == false:
+			
+			if Input.is_action_pressed("f6"):
+				if Singleton.weather == "clear":
+					if Singleton.location_now == "map":
+						$AudioStreamPlayer.volume_db = -10
+						$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Outside Rain 1.mp3")
+					else:
+						$AudioStreamPlayer.volume_db = 0
+						$AudioStreamPlayer.stream = load("res://audio/rain/WE Light Inside Rain 1.mp3")
+					$AudioStreamPlayer.play()
+					Singleton.weather = "rain"
+					print("Начался дождь")
+				elif Singleton.weather == "rain":
+					
+					$AudioStreamPlayer.stop()
+					Singleton.weather = "clear"
+					print("Дождь закончился")
 			if Singleton.do_magic == true:
 				if Input.is_action_pressed("magic_button"):
 					if event.is_pressed():

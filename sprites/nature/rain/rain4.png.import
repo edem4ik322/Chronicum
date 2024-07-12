@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rain1.png-92343c950db25df5ec4de23988b9efe6.stex"
+path="res://.import/rain4.png-4405b1b0e28bb5b0fbb3153defe51aad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/nature/rain1.png"
-dest_files=[ "res://.import/rain1.png-92343c950db25df5ec4de23988b9efe6.stex" ]
+source_file="res://sprites/nature/rain/rain4.png"
+dest_files=[ "res://.import/rain4.png-4405b1b0e28bb5b0fbb3153defe51aad.stex" ]
 
 [params]
 
