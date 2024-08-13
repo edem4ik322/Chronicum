@@ -142,7 +142,6 @@ texture_progress = ExtResource( 17 )
 fill_mode = 2
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 26 )]
-visible = false
 
 [node name="Hand" type="Node2D" parent="."]
 position = Vector2( 9, -15 )

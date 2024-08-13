@@ -38,14 +38,3 @@ func _ready():
 
 
 
-
-func _on_Area2D2_body_exited(_body):
-	$Area2D2/F.hide()
-	$Area2D2.queue_free()
-
-
-func _on_Area2D2_body_entered(_body):
-	if Singleton.help_1 == true:
-		$Area2D2/F.show()
-		Singleton.help_1 = false
-

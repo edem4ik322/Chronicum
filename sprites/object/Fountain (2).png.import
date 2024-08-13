@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/alt.png-cf980f3bca7dd005e5645ed3c230d48a.stex"
+path="res://.import/Fountain (2).png-3611efd209ecb14af170e4c1e6e69ccb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/alt.png"
-dest_files=[ "res://.import/alt.png-cf980f3bca7dd005e5645ed3c230d48a.stex" ]
+source_file="res://sprites/object/Fountain (2).png"
+dest_files=[ "res://.import/Fountain (2).png-3611efd209ecb14af170e4c1e6e69ccb.stex" ]
 
 [params]
 

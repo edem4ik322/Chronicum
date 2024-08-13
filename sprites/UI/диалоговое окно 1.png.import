@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shift.png-fd033aa7120a4a54a608b2e923f34650.stex"
+path="res://.import/диалоговое окно 1.png-011e517a9178d3a07b816a9f20d93983.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/shift.png"
-dest_files=[ "res://.import/shift.png-fd033aa7120a4a54a608b2e923f34650.stex" ]
+source_file="res://sprites/UI/диалоговое окно 1.png"
+dest_files=[ "res://.import/диалоговое окно 1.png-011e517a9178d3a07b816a9f20d93983.stex" ]
 
 [params]
 

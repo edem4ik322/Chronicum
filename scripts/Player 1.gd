@@ -22,6 +22,8 @@ var magic_pos: Vector2
 
 
 func _ready():
+	if Singleton.pause == false:
+		$CanvasLayer/Pause.hide()
 	if Singleton.weather == "rain":
 		if Singleton.location_now == "map":
 			$CanvasLayer/CPUParticles2D.show()

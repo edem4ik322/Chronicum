@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://sprites/floor/road_1.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/Player 1.tscn" type="PackedScene" id=2]
@@ -26,6 +26,10 @@
 [ext_resource path="res://scenes/object scenes/furnace.tscn" type="PackedScene" id=24]
 [ext_resource path="res://sprites/nature/rain/rain4.png" type="Texture" id=25]
 [ext_resource path="res://sprites/nature/rain/rain3.png" type="Texture" id=26]
+[ext_resource path="res://sprites/npc/Yob(gopnik)_1.png" type="Texture" id=27]
+[ext_resource path="res://sprites/npc/uncle_Anjey.png" type="Texture" id=28]
+[ext_resource path="res://sprites/npc/Yob(gopnik)_2.png" type="Texture" id=29]
+[ext_resource path="res://sprites/npc/Trader.png" type="Texture" id=30]
 
 [sub_resource type="AnimatedTexture" id=2]
 flags = 4
@@ -179,6 +183,7 @@ texture = SubResource( 2 )
 emission_shape = 2
 emission_rect_extents = Vector2( 1000, 1000 )
 gravity = Vector2( 0, 0 )
+scale_amount = 0.8
 
 [node name="floor" type="TileMap" parent="."]
 position = Vector2( 30, 0 )
@@ -241,3 +246,19 @@ texture = ExtResource( 13 )
 [node name="КартаДеревни" type="Sprite" parent="YSort/houses"]
 position = Vector2( 688, -551 )
 texture = ExtResource( 20 )
+
+[node name="Trader" type="Sprite" parent="."]
+position = Vector2( 648, 400 )
+texture = ExtResource( 30 )
+
+[node name="UncleAnjey" type="Sprite" parent="."]
+position = Vector2( 859, 209 )
+texture = ExtResource( 28 )
+
+[node name="Yob(gopnik)2" type="Sprite" parent="."]
+position = Vector2( 600, 271 )
+texture = ExtResource( 29 )
+
+[node name="Yob(gopnik)1" type="Sprite" parent="."]
+position = Vector2( 638, 266 )
+texture = ExtResource( 27 )

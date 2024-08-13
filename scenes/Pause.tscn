@@ -1,52 +1,116 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://style/theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/UI/Pause.gd" type="Script" id=2]
+[ext_resource path="res://sprites/UI/Settings.png" type="Texture" id=3]
+[ext_resource path="res://sprites/UI/Skills.png" type="Texture" id=4]
+[ext_resource path="res://sprites/UI/Quest_menu.png" type="Texture" id=5]
+[ext_resource path="res://sprites/UI/inventory.png" type="Texture" id=6]
 
 [node name="Pause" type="Control"]
 script = ExtResource( 2 )
 
-[node name="Panel" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 340.0
-margin_top = 70.0
-margin_right = 704.0
-margin_bottom = 451.0
+[node name="Inventory_Button" type="Button" parent="."]
+margin_left = 246.0
+margin_top = 312.0
+margin_right = 298.0
+margin_bottom = 391.0
+rect_scale = Vector2( 0.896062, 0.57962 )
+flat = true
 
-[node name="Button" type="Button" parent="Panel"]
-margin_left = 85.0
-margin_top = 77.5
-margin_right = 268.0
-margin_bottom = 104.5
+[node name="Quests_Button" type="Button" parent="."]
+margin_left = 245.0
+margin_top = 409.0
+margin_right = 297.0
+margin_bottom = 488.0
+rect_scale = Vector2( 0.896062, 0.57962 )
+flat = true
+
+[node name="Skills_Button" type="Button" parent="."]
+margin_left = 244.0
+margin_top = 358.0
+margin_right = 319.0
+margin_bottom = 481.0
+rect_scale = Vector2( 0.65198, 0.391257 )
+flat = true
+
+[node name="Menu_Button" type="Button" parent="."]
+margin_left = 247.0
+margin_top = 457.0
+margin_right = 294.0
+margin_bottom = 504.0
+flat = true
+
+[node name="Settings" type="Sprite" parent="."]
+position = Vector2( 529, 307 )
+scale = Vector2( 4.06383, 3.27206 )
+texture = ExtResource( 3 )
+
+[node name="Exit_Button" type="Button" parent="Settings"]
+margin_left = -60.0
+margin_top = -24.0
+margin_right = 327.0
+margin_bottom = 11.0
+rect_scale = Vector2( 0.133368, 0.475712 )
 theme = ExtResource( 1 )
-text = "Продолжить"
+flat = true
 
-[node name="Save_Button" type="Button" parent="Panel"]
-margin_left = 85.0
-margin_top = 136.0
-margin_right = 268.0
-margin_bottom = 163.0
+[node name="Save_Button" type="Button" parent="Settings"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 176.0
+margin_bottom = 64.0
+rect_scale = Vector2( 0.306666, 0.489097 )
 theme = ExtResource( 1 )
-text = "Сохранить (f5)"
+flat = true
 
-[node name="Load_Button" type="Button" parent="Panel"]
-margin_left = 85.0
-margin_top = 194.0
-margin_right = 268.0
-margin_bottom = 221.0
+[node name="Load_Button" type="Button" parent="Settings"]
+margin_left = 8.0
+margin_top = 49.0
+margin_right = 66.0
+margin_bottom = 89.0
+rect_scale = Vector2( 0.898924, 0.407263 )
 theme = ExtResource( 1 )
-text = "Загрузить (f9)"
+flat = true
 
-[node name="Exit_Button" type="Button" parent="."]
-margin_left = 804.0
-margin_top = 552.0
-margin_right = 987.0
-margin_bottom = 579.0
+[node name="Ok_Button" type="Button" parent="Settings"]
+margin_left = -60.0
+margin_top = -64.0
+margin_right = 684.0
+margin_bottom = -6.0
+rect_scale = Vector2( 0.0700637, 0.294118 )
 theme = ExtResource( 1 )
-text = "Выход"
+flat = true
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Panel/Save_Button" to="." method="_on_Save_Button_pressed"]
-[connection signal="pressed" from="Panel/Load_Button" to="." method="_on_Load_Button_pressed"]
-[connection signal="pressed" from="Exit_Button" to="." method="_on_Exit_Button_pressed"]
+[node name="Settings_Button" type="Button" parent="Settings"]
+margin_left = -60.0
+margin_top = -44.0
+margin_right = 2.0
+margin_bottom = -17.0
+rect_scale = Vector2( 0.831053, 0.570984 )
+flat = true
+
+[node name="Skills" type="Sprite" parent="."]
+position = Vector2( 527, 307 )
+scale = Vector2( 4.064, 3.272 )
+texture = ExtResource( 4 )
+
+[node name="QuestMenu" type="Sprite" parent="."]
+position = Vector2( 527, 307 )
+scale = Vector2( 4.064, 3.272 )
+texture = ExtResource( 5 )
+
+[node name="Inventory" type="Sprite" parent="."]
+position = Vector2( 527, 307 )
+scale = Vector2( 4.064, 3.272 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="Inventory_Button" to="." method="_on_Inventory_Button_pressed"]
+[connection signal="pressed" from="Quests_Button" to="." method="_on_Quests_Button_pressed"]
+[connection signal="pressed" from="Skills_Button" to="." method="_on_Skills_Button_pressed"]
+[connection signal="pressed" from="Menu_Button" to="." method="_on_Menu_Button_pressed"]
+[connection signal="pressed" from="Settings/Exit_Button" to="." method="_on_Exit_Button_pressed"]
+[connection signal="pressed" from="Settings/Save_Button" to="." method="_on_Save_Button_pressed"]
+[connection signal="pressed" from="Settings/Load_Button" to="." method="_on_Load_Button_pressed"]
+[connection signal="pressed" from="Settings/Ok_Button" to="." method="_on_Ok_Button_pressed"]
+[connection signal="pressed" from="Settings/Settings_Button" to="." method="_on_Settings_Button_pressed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/f.png-eeed65fba797d493419ef768cfc152e7.stex"
+path="res://.import/Trader.png-1a374915ab8aac2a65b70fa5c15cd2b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/UI/f.png"
-dest_files=[ "res://.import/f.png-eeed65fba797d493419ef768cfc152e7.stex" ]
+source_file="res://sprites/npc/Trader.png"
+dest_files=[ "res://.import/Trader.png-1a374915ab8aac2a65b70fa5c15cd2b5.stex" ]
 
 [params]
 
