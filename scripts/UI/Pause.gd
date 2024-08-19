@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	pass
+	$Settings.show()
 
 
 func _on_Exit_Button_pressed():

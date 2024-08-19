@@ -3,6 +3,10 @@ extends Node2D
 var start_pos_x = 448
 var start_pos_y = 280
 var help = true
+var ticks := 0.0
+var DAY_LENGTH := 10.0
+export var day_modulate: GradientTexture
+var prog := 0.0
 
 func _ready():
 	Singleton.do_magic = true
@@ -19,11 +23,14 @@ func _ready():
 			$YSort/Player1.position.y = start_pos_y
 			print("Начальная позиция")
 
+func _process(delta):
+	ticks += delta
+	prog = fmod(ticks, DAY_LENGTH) / DAY_LENGTH
+	$CanvasModulate.color = day_modulate.gradient.interpolate(prog)
+	#print(prog)
 
 func _physics_process(delta):
 	if Singleton.weather == "rain":
-		$CanvasModulate.show()
 		$raindrop.show()
 	else:
-		$CanvasModulate.hide()
 		$raindrop.hide()

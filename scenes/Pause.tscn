@@ -42,6 +42,7 @@ margin_bottom = 504.0
 flat = true
 
 [node name="Settings" type="Sprite" parent="."]
+visible = false
 position = Vector2( 529, 307 )
 scale = Vector2( 4.06383, 3.27206 )
 texture = ExtResource( 3 )
@@ -91,16 +92,19 @@ rect_scale = Vector2( 0.831053, 0.570984 )
 flat = true
 
 [node name="Skills" type="Sprite" parent="."]
+visible = false
 position = Vector2( 527, 307 )
 scale = Vector2( 4.064, 3.272 )
 texture = ExtResource( 4 )
 
 [node name="QuestMenu" type="Sprite" parent="."]
+visible = false
 position = Vector2( 527, 307 )
 scale = Vector2( 4.064, 3.272 )
 texture = ExtResource( 5 )
 
 [node name="Inventory" type="Sprite" parent="."]
+visible = false
 position = Vector2( 527, 307 )
 scale = Vector2( 4.064, 3.272 )
 texture = ExtResource( 6 )

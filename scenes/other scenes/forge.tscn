@@ -1,14 +1,15 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprites/object/Furnace_truba.png" type="Texture" id=1]
-[ext_resource path="res://sprites/houses/forge/Forge_wall.png" type="Texture" id=2]
-[ext_resource path="res://sprites/houses/forge/Furnace_roof_2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/houses/village/forge/Forge_wall.png" type="Texture" id=2]
+[ext_resource path="res://sprites/houses/village/forge/Furnace_roof_2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/object scenes/Bucket_of_water.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/object sctipts/forge_sprite.gd" type="Script" id=5]
 [ext_resource path="res://scenes/object scenes/anvil.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/object scenes/craft_table.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sprites/houses/forge/stone_platform.png" type="Texture" id=9]
-[ext_resource path="res://sprites/houses/forge/Forge_roof.png" type="Texture" id=10]
+[ext_resource path="res://sprites/houses/village/forge/stone_platform.png" type="Texture" id=9]
+[ext_resource path="res://sprites/houses/village/forge/Forge_roof.png" type="Texture" id=10]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 66.25, 94.5 )
