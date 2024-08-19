@@ -317,10 +317,6 @@ texture = ExtResource( 36 )
 position = Vector2( 1098, 753 )
 texture = ExtResource( 32 )
 
-[node name="Farmhouse5" type="Sprite" parent="YSort/houses"]
-position = Vector2( 1375, 751 )
-texture = ExtResource( 34 )
-
 [node name="Farmhouse6" type="Sprite" parent="YSort/houses"]
 position = Vector2( 618, 771 )
 texture = ExtResource( 33 )
