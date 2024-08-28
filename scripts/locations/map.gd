@@ -1,3 +1,4 @@
+tool
 extends Node2D
 
 var start_pos_x = 448
@@ -29,8 +30,8 @@ func _process(delta):
 	$CanvasModulate.color = day_modulate.gradient.interpolate(prog)
 	#print(prog)
 
-func _physics_process(delta):
-	if Singleton.weather == "rain":
-		$raindrop.show()
-	else:
-		$raindrop.hide()
+#func _physics_process(delta):
+	#if Singleton.weather == "rain":
+		#$raindrop.show()
+	#else:
+		#$raindrop.hide()

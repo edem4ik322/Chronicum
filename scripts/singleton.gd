@@ -9,7 +9,7 @@ var test_a = 0
 var delta1
 var hand_pos :Vector2
 var mouse_pos
-var do_magic
+var do_magic :bool = true
 var player_pos_x :float
 var player_pos_y :float
 var loc :String
