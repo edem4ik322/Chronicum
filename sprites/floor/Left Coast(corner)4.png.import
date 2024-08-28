@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cust_2.png-8a28f940443c9d5e640f75891970c3d1.stex"
+path="res://.import/Left Coast(corner)4.png-9cf87cd9d2342d0a626fb463853bde2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/nature/objects/Cust_2.png"
-dest_files=[ "res://.import/Cust_2.png-8a28f940443c9d5e640f75891970c3d1.stex" ]
+source_file="res://sprites/floor/Left Coast(corner)4.png"
+dest_files=[ "res://.import/Left Coast(corner)4.png-9cf87cd9d2342d0a626fb463853bde2f.stex" ]
 
 [params]
 
